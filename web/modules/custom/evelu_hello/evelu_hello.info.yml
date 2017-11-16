@@ -1,0 +1,5 @@
+name: Evelu Hello
+type: module
+description:  'Displays a basic page'
+package:  Evelu
+core: 8.x

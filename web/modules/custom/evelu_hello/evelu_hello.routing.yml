@@ -1,0 +1,7 @@
+evelu_hello.hello:
+  path: '/evelu/hello'
+  defaults:
+    _controller: '\Drupal\evelu_hello\Controller\EveluHelloController::hello'
+    _title: 'Hello Page'
+  requirements:
+    _permission: 'access content'
