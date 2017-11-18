@@ -1,0 +1,5 @@
+name: Evelu Pages
+type: module
+description:  'Displays a calculator pages'
+package:  Evelu
+core: 8.x
