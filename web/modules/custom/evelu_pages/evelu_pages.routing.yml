@@ -1,6 +1,46 @@
-forcontu_pages.calculator:
-  path: '/forcontu/pages/calculator/{num1}/{num2}'
+orcontu_pages.simple:
+  path: '/evelu/pages/simple'
   defaults:
-    _controller: '\Drupal\forcontu_pages\Controller\ForcontuPagesController::calculator'
+    _controller: '\Drupal\evelu_pages\Controller\EveluPagesController::simple'
+    _title: 'Simple Page'
   requirements:
     _permission: 'access content'
+
+evelu_pages.calculator:
+  path: '/evelu/pages/calculator/{num1}/{num2}'
+  defaults:
+    _controller: '\Drupal\evelu_pages\Controller\EveluPagesController::calculator'
+    num1: 20
+    num2: 10
+  requirements:
+    _permission: 'access content'
+
+evelu_pages.user:
+  path: '/evelu/pages/user/{user}'
+  defaults:
+    _controller: '\Drupal\evelu_pages\Controller\EveluPagesController::user'
+  requirements:
+    _permission: 'access content'
+
+evelu_pages.links:
+  path: '/evelu/pages/links'
+  defaults:
+    _controller: '\Drupal\evelu_pages\Controller\EveluPagesController::links'
+  requirements:
+    _permission: 'access content'
+
+evelu_pages.admin_evelu:
+  path: '/admin/evelu'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Evelu'
+  requirements:
+    _access: 'TRUE'
+
+evelu_pages.admin_evelu_pages:
+  path: '/admin/evelu/evelu_pages'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Evelu Pages'
+  requirements:
+    _access: 'TRUE'

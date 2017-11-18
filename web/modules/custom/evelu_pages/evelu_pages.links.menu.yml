@@ -1,0 +1,12 @@
+evelu_pages.admin_evelu:
+  title: 'Evelu'
+  parent: system.admin
+  route_name: evelu_pages.admin_evelu
+  description: 'Links to pages created during this course'
+  weight: -11
+
+evelu_pages.admin_evelu_pages:
+  title: 'Evelu Pages'
+  parent: evelu_pages.admin_evelu
+  route_name: evelu_pages.admin_evelu_pages
+  description: 'Activities from evelu Pages module'

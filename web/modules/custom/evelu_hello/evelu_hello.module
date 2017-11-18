@@ -1,6 +1,51 @@
 <?php
 /**
 * @file
-* Module file for Forcontu Hello
+* Module file for Evelu Hello
 * Este módulo crea una página estática con un mensaje de bienvenida.
 */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+/**
+* Implements hook_help().
+*/
+
+function evelu_hello_help($route_name,\Drupal\Core\Routing\RouteMatchInterface $route_match) {
+
+  switch ($route_name) {
+    // Main module help for the Evelu Hello module.
+    case 'help.page.evelu_hello':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('This module shows how to create a simple page. ') . '</p>';
+      return $output;
+    // Help for another path in the Evelu Hello module.
+    case 'evelu_hello.hello':
+      $output = '';
+      $output .= '<p>' . t('This is a very simple page created by the Evelu Hello module. ') . '</p>';
+      return $output;
+  }
+}
+
+use Drupal\taxonomy\Entity\Term;
+/**
+* Implements hook_install().
+*/
+function evelu_hello_install(){
+
+  //1. Creación y asignación de una variable de estado
+  \Drupal::state()->set('evelu_hello.test', TRUE);
+
+  //2. Creación de un término de taxonomía
+  $term = Term::create(array(
+    'name' => t('evelu Hello'),
+    'vid' => 'tags',));
+  $term->save();
+}
+
+/**
+* Implements hook_uninstall().
+*/
+function evelu_hello_uninstall(){
+  \Drupal::state()->delete('evelu_hello.test');
+}
